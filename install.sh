@@ -13,6 +13,12 @@ cp ir_black.vim ~/.vim/colors/
 mkdir -p ~/.zsh
 cp zsh/git.zsh ~/.zsh/
 
+cp gitconfig ~/.gitconfig.local
+cat << ZSH_CONFIG >> ~/.gitconfig
+[include]
+    path = ~/.gitconfig.local
+ZSH_CONFIG
+
 # VIM PLUGINS
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.vim/pack/vendor/start/fzf
 ~/.vim/pack/vendor/start/fzf/install --all
