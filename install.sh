@@ -3,6 +3,7 @@ if ! command -v rg &> /dev/null; then
 fi
 
 ln -sf ~/dotfiles/vimrc ~/.vimrc
+ln -sf ~/dotfiles/zshrc ~/.zshrc
 
 mkdir -p ~/.vim/pack/vendor/start
 mkdir -p ~/.vim/colors
@@ -32,5 +33,3 @@ git clone --depth 1 https://github.com/thoughtbot/vim-rspec.git ~/.vim/pack/vend
 git clone --depth 1 https://github.com/shioyama/vim-to-github.git ~/.vim/pack/vendor/start/to-github
 git clone --depth 1 https://github.com/vim-scripts/ruby.vim.git ~/.vim/pack/vendor/start/ruby.vim
 git clone --depth 1 https://github.com/itchyny/lightline.vim ~/.vim/pack/vendor/start/lightline.vim
-
-ln -sf ~/dotfiles/zshrc ~/.zshrc
