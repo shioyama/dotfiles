@@ -10,6 +10,9 @@ mkdir -p ~/.vim/colors
 cp grb256.vim ~/.vim/colors/
 cp ir_black.vim ~/.vim/colors/
 
+mkdir -p ~/.zsh
+cp zsh/git.zsh ~/.zsh/
+
 # VIM PLUGINS
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.vim/pack/vendor/start/fzf
 ~/.vim/pack/vendor/start/fzf/install --all

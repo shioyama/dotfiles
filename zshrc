@@ -27,6 +27,8 @@ alias ls="${aliases[ls]:-ls} -G"
 alias ltr='ls -ltr'
 alias ltra='ls -ltra'
 
+source ~/.zsh/git.zsh
+
 alias ga='git add'
 compdef _git ga=git-add
 alias gd='git df'
