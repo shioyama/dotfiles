@@ -3,28 +3,6 @@
 set nocompatible
 filetype off
 
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
-
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 " remember more commands and search history
@@ -50,6 +28,28 @@ set numberwidth=5
 set showtabline=2
 set winwidth=30
 
+" ref: http://www.readncode.com/blog/resizing-vim-window-splits-like-a-boss/
+set winheight=2
+set winminheight=2
+set spelllang=en_ca,cjk
+
+" set shell=/bin/sh
+" Prevent Vim from clobbering the scrollback buffer. See
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
+
+" keep more context when scrolling off the end of a buffer
+set scrolloff=3
+
+" Store temporary files in a central spot
+set backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+" display incomplete commands
+set showcmd
 " Enable highlighting for syntax
 syntax on
 
@@ -57,6 +57,38 @@ syntax on
 set wildmenu
 set wildignore=tmp/**,log/**,vendor/bundle/**,sorbet/**
 let mapleader=","
+
+" don't change current dir
+set noautochdir
+set complete+=kspell
+set lazyredraw
+set modelines=1
+
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&readonly?"":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+
+" ref: http://superuser.com/questions/248734/when-using-grep-from-vim-how-to-jump-to-results
+nmap <silent> <C-N> :cn<CR>zv
+nmap <silent> <C-P> :cp<CR>zv
 
 " }}}
 " MISC KEY MAPS {{{
