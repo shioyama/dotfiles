@@ -8,6 +8,7 @@ ln -sf ~/dotfiles/zshrc ~/.zshrc
 mkdir -p ~/.vim/pack/vendor/start
 mkdir -p ~/.vim/colors
 cp grb256.vim ~/.vim/colors/
+cp ir_black.vim ~/.vim/colors/
 
 # VIM PLUGINS
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.vim/pack/vendor/start/fzf
