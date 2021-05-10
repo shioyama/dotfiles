@@ -31,4 +31,4 @@ git clone --depth 1 https://github.com/shioyama/vim-to-github.git ~/.vim/pack/ve
 git clone --depth 1 https://github.com/vim-scripts/ruby.vim.git ~/.vim/pack/vendor/start/ruby.vim
 git clone --depth 1 https://github.com/itchyny/lightline.vim ~/.vim/pack/vendor/start/lightline.vim
 
-#ln -sf ~/dotfiles/zshrc ~/.zshrc
+ln -sf ~/dotfiles/zshrc ~/.zshrc
