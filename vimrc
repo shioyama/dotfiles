@@ -21,7 +21,7 @@ set hlsearch
 set ignorecase smartcase
 
 " highlight current line
-set cursorline
+"set cursorline
 set cmdheight=2
 set switchbuf=useopen
 set numberwidth=5
