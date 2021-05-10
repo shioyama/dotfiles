@@ -29,5 +29,6 @@ git clone --depth 1 https://github.com/tpope/vim-abolish.git ~/.vim/pack/vendor/
 git clone --depth 1 https://github.com/thoughtbot/vim-rspec.git ~/.vim/pack/vendor/start/vim-rspec
 git clone --depth 1 https://github.com/shioyama/vim-to-github.git ~/.vim/pack/vendor/start/to-github
 git clone --depth 1 https://github.com/vim-scripts/ruby.vim.git ~/.vim/pack/vendor/start/ruby.vim
+git clone --depth 1 https://github.com/itchyny/lightline.vim ~/.vim/pack/vendor/start/lightline.vim
 
 #ln -sf ~/dotfiles/zshrc ~/.zshrc
