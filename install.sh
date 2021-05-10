@@ -2,16 +2,14 @@ if ! command -v rg &> /dev/null; then
   sudo apt-get install -y ripgrep
 fi
 
-if ! command -v fzf &> /dev/null; then
-  sudo apt-get install -y fzf
-fi
-
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 
 mkdir -p ~/.vim/pack/vendor/start
 
 # VIM PLUGINS
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.vim/pack/vendor/start/fzf
+~/.vim/pack/vendor/start/fzf/install --all
+
 git clone --depth 1 https://github.com/junegunn/fzf.vim.git ~/.vim/pack/vendor/start/fzf.vim
 git clone --depth 1 https://github.com/tpope/vim-fugitive.git ~/.vim/pack/vendor/start/vim-fugitive
 git clone --depth 1 https://github.com/vim-ruby/vim-ruby.git ~/.vim/pack/vendor/start/vim-ruby
