@@ -27,4 +27,43 @@ alias ls="${aliases[ls]:-ls} -G"
 alias ltr='ls -ltr'
 alias ltra='ls -ltra'
 
+alias ga='git add'
+compdef _git ga=git-add
+alias gd='git df'
+compdef _git gd=git-df
+alias gdc='git diff --cached'
+compdef _git gdc=git-diff
+alias gap='git add --patch'
+compdef _git gap=git-add
+alias glp='git l'
+compdef _git glp=git-log
+alias gla='git la'
+compdef _git gla=git-log
+alias gra='git ra'
+compdef _git gra=git-log
+alias gam='git am'
+compdef _git gam=git-am
+alias grb='git rebase'
+compdef _git grb=git-rebase
+alias grbc='git rebase --continue'
+compdef _git grbc=git-rebase
+alias gpr='git pull-request'
+compdef _git gpr=git-pull-request
+alias gmv='git mv'
+compdef _git gmv=git-mv
+alias gst='git st'
+compdef _git gst=git-st
+alias gstp='git stash pop'
+alias gbrl="git for-each-ref --sort=committerdate --format='%(refname:short)' refs/heads/"
+alias gpme="gp -u shioyama"
+alias gpme!="gp -u shioyama --force-with-lease"
+alias grbi="git rebase -i"
+compdef _git grbi=git-rebase
+
+alias gc!="git commit -v --amend"
+alias gsps="git show --pretty=short --show-signature"
+
+alias gcob='git checkout -b'
+compdef _git grb=git-checkout
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
