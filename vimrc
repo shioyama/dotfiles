@@ -45,7 +45,7 @@ command! -bang -nargs=* Rg
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
-map <leader>R :Rg
+map <leader>R :Rg 
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
@@ -81,5 +81,67 @@ nnoremap <leader>add :Gwrite<cr>
 nnoremap <leader>ci :Gcommit<cr>
 nnoremap <leader>log :Glog<cr>
 nnoremap <leader>gb :Git blame<cr>
+" }}}
+" RENAME CURRENT FILE {{{
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+" }}}
+" MAPS TO JUMP TO SPECIFIC TARGETS AND FILES {{{
+let g:fzf_action = {
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit' }
+
+command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline']}, <bang>0)
+function! GoDirectory(directory)
+  if isdirectory(a:directory)
+    exec ":Files ".a:directory
+  else
+    " for shopify
+    if isdirectory("components")
+      let args = {'source': 'find $(find components -type d -maxdepth 5 -path */'.a:directory.') -type f' }
+      let args.options = ['--ansi', '--prompt', a:directory.' ', '--layout=reverse', '--info=inline']
+      call fzf#run(fzf#wrap(args))
+    else
+      echoerr "No \"".a:directory."\" directory found"
+    endif
+  endif
+endfunction
+map <leader>gR :call ShowRoutes()<cr>
+map <leader>ga :call GoDirectory("app")<cr>
+map <leader>gv :call GoDirectory("app/views")<cr>
+map <leader>gc :call GoDirectory("app/controllers")<cr>
+map <leader>gm :call GoDirectory("app/models")<cr>
+map <leader>gh :call GoDirectory("app/helpers")<cr>
+map <leader>gl :call GoDirectory("lib")<cr>
+map <leader>gp :call GoDirectory("public")<cr>
+map <leader>gf :call GoDirectory("features")<cr>
+map <leader>b :Buffers<cr>
+function! GoJavascript()
+  if isdirectory("app/assets/javascripts")
+    :Files app/assets/javascripts
+  elseif isdirectory("app/javascript")
+    :Files app/javascript
+  else
+    echoerr "No javascript directory found"
+  endif
+endfunction
+map <leader>gj :call GoJavascript()<cr>
+map <leader>gs :call GoDirectory("app/assets/stylesheets")<cr>
+map <leader>gg :topleft 100 :split Gemfile<cr>
+map <leader>f :Files<cr>
+map <leader>F :Files %%<cr>
+
+nnoremap <leader>. :A<cr>
+nnoremap <leader>; :AV<cr>
+nnoremap <leader>: :AS<cr>
 " }}}
 " vim:foldmethod=marker:foldlevel=0
