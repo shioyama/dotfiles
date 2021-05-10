@@ -91,6 +91,14 @@ nmap <silent> <C-N> :cn<CR>zv
 nmap <silent> <C-P> :cp<CR>zv
 
 " }}}
+" COLOR {{{
+colorscheme grb256
+highlight SpellRare ctermfg=cyan ctermbg=none
+highlight SpellBad ctermfg=red ctermbg=none
+"highlight SpellCap ctermfg=red ctermbg=none
+highlight SpellLocal ctermfg=lightblue ctermbg=none
+" }}}
+
 " MISC KEY MAPS {{{
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
