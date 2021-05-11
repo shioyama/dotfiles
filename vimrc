@@ -90,6 +90,21 @@ let g:lightline = {
 nmap <silent> <C-N> :cn<CR>zv
 nmap <silent> <C-P> :cp<CR>zv
 
+" copy current file name (relative/absolute) to system clipboard (Linux version)
+if has("gui_gtk") || has("gui_gtk2") || has("gui_gnome") || has("unix")
+  " relative path (src/foo.txt)
+  nnoremap <leader>cf :let @+=expand("%")<CR>
+
+  " absolute path (/something/src/foo.txt)
+  nnoremap <leader>cF :let @+=expand("%:p")<CR>
+
+  " filename (foo.txt)
+  nnoremap <leader>ct :let @+=expand("%:t")<CR>
+
+  " directory name (/something/src)
+  nnoremap <leader>ch :let @+=expand("%:p:h")<CR>
+endif
+
 " }}}
 " COLOR {{{
 colorscheme grb256
@@ -98,7 +113,6 @@ highlight SpellBad ctermfg=red ctermbg=none
 "highlight SpellCap ctermfg=red ctermbg=none
 highlight SpellLocal ctermfg=lightblue ctermbg=none
 " }}}
-
 " MISC KEY MAPS {{{
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
