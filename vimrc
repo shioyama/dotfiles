@@ -217,4 +217,9 @@ nnoremap <leader>. :A<cr>
 nnoremap <leader>; :AV<cr>
 nnoremap <leader>: :AS<cr>
 " }}}
+" RUNNING TESTS {{{
+map <leader>t :Dispatch bin/rails test %<CR>
+
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+" }}}
 " vim:foldmethod=marker:foldlevel=0
