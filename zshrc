@@ -69,3 +69,9 @@ alias gcob='git checkout -b'
 compdef _git grb=git-checkout
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# tmux by default
+if [ -z "$TMUX" ] && [ -n "$SSH_TTY" ] && [[ $- =~ i ]]; then
+    tmux -CC attach-session || tmux -CC new-session
+    exit
+fi
