@@ -33,7 +33,7 @@ source ~/.zsh/git.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # tmux by default
-if [ -z "$tmux" ] && [ -n "$ssh_tty" ] && [[ $- =~ i ]]; then
-    tmux -cc attach-session || tmux -cc new-session
-    exit
-fi
+# if [ -z "$TMUX" ] && [ -n "$SSH_TTY" ] && [[ $- =~ i ]]; then
+#     tmux -CC attach-session || tmux -CC new-session
+#     exit
+# fi
