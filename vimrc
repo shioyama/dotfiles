@@ -106,6 +106,53 @@ if has("gui_gtk") || has("gui_gtk2") || has("gui_gnome") || has("unix")
 endif
 
 " }}}
+" CUSTOM AUTOCMDS {{{
+augroup vimrcEx
+  " Clear all autocmds in the group
+  autocmd!
+  autocmd FileType text setlocal textwidth=78
+  " Jump to last cursor position unless it's invalid or in an event handler
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  "for ruby, autoindent with two spaces, always expand tabs
+  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+  autocmd FileType python set sw=4 sts=4 et
+
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
+  autocmd! BufRead,BufNewFile *.hamlc setfiletype haml
+  autocmd! BufRead,BufNewFile *.vue set filetype=html
+
+  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
+  "autocmd BufReadPost * :DetectIndent
+
+  " Indent p tags
+  autocmd FileType html,eruby let g:html_indent_tags = '\|html\|p\|li\|dt\|dd\|tr\|td\|th\|table\|thead\|tbody\|div'
+
+  " Don't syntax highlight markdown because it's often wrong
+  autocmd! FileType mkd setlocal syn=off
+
+  " Leave the return key alone when in command line windows, since it's used
+  " to run commands there.
+  autocmd! CmdwinEnter * :unmap <cr>
+  autocmd! CmdwinLeave * :call MapCR()
+  " Unset cursorline when leaving a window to avoid many lines on the screen
+  " at once
+  autocmd! VimEnter,WinEnter,BufWinEnter * :setlocal cursorline
+  autocmd! winLeave * :setlocal nocursorline
+
+  function MyBufEnter()
+    " don't (re)store filepos for git commit message files
+    if &filetype == "gitcommit"
+      call setpos('.', [0, 1, 1, 0])
+    endif
+  endfunction
+  au BufEnter * call MyBufEnter()
+augroup END
+" }}}
 " COLOR {{{
 colorscheme grb256
 highlight SpellRare ctermfg=cyan ctermbg=none
