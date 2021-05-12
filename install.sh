@@ -30,8 +30,6 @@ plugins=(
   'a88311b222eb9f90fa9fa72292e61d15c6767866'
   'tpope/vim-fugitive'
   '32b0d6266361614a6a07cfe850750e900cd50575'
-  'vim-ruby/vim-ruby'
-  '4788a08433c3c90e131fc7d110d82577e1234a86'
   'tpope/vim-commentary'
   '349340debb34f6302931f0eb7139b2c11dfdf427'
   'tpope/vim-eunuch'
@@ -60,8 +58,6 @@ plugins=(
   '52a72592b6128f4ef1557bc6e2e3eb014d8b2d38'
   'shioyama/vim-to-github'
   '290d7414e5f48040b25fba538c0d94de482e3b7a'
-  'vim-scripts/ruby.vim'
-  'c9eeadb464c3d847ffc14e2d2efe2d5a5ad71f10'
   'itchyny/lightline.vim'
   '8a712365f9708044667589d9fffd87a4825d29f6'
 )
