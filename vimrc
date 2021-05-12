@@ -205,6 +205,20 @@ nnoremap ? ?\v
 nnoremap j gj
 nnoremap k gk
 " }}}
+" MULTIPURPOSE TAB KEY {{{
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+" }}}
 " OPEN FILES IN DIRECTORY OF CURRENT FILE {{{
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
