@@ -53,6 +53,8 @@ set showcmd
 " Enable highlighting for syntax
 syntax on
 
+filetype plugin indent on
+
 " make tab completion for files/buffers act like bash
 set wildmenu
 set wildignore=tmp/**,log/**,vendor/bundle/**,sorbet/**
