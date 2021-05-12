@@ -161,6 +161,9 @@ highlight SpellBad ctermfg=red ctermbg=none
 highlight SpellLocal ctermfg=lightblue ctermbg=none
 " }}}
 " MISC KEY MAPS {{{
+map <leader>y "*y
+map <leader>A :Ag 
+
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
