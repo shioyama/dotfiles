@@ -34,6 +34,8 @@ plugins=(
   '349340debb34f6302931f0eb7139b2c11dfdf427'
   'tpope/vim-eunuch'
   'dbbbf853fc523d312f61b4bbdf2e13297645dcde'
+  'vim-scripts/matchit.zip'
+  'ced6c409c9beeb0b4142d21906606bd194411d1d'
   'rking/ag.vim'
   '4a0dd6e190f446e5a016b44fdaa2feafc582918e'
   'tpope/vim-repeat'
