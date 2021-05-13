@@ -32,6 +32,10 @@ set winwidth=30
 set winheight=2
 set winminheight=2
 set spelllang=en_ca,cjk
+nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> > :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> < :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 " set shell=/bin/sh
 " Prevent Vim from clobbering the scrollback buffer. See
