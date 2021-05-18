@@ -2,6 +2,7 @@
 
 if ! command -v rg &> /dev/null; then
   sudo apt-get install -y ripgrep
+  sudo apt-get install -y hub
 fi
 
 ln -sf ~/dotfiles/vimrc ~/.vimrc
