@@ -5,6 +5,13 @@ export EDITOR='vim'
 autoload -Uz vcs_info
 precmd_functions+=( vcs_info )
 setopt prompt_subst
+setopt share_history
+setopt extended_history
+setopt hist_find_no_dups
+export HISTTIMEFORMAT="[%F %T] "
+export HISTFILE=~/.zsh_history
+export HISTFILESIZE=10000000
+export HISTSIZE=10000000
 
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '*'
