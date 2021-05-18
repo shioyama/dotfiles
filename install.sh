@@ -7,6 +7,7 @@ fi
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/pryrc ~/.pryrc
 
 mkdir -p ~/.vim/pack/vendor/start
 mkdir -p ~/.vim/colors
