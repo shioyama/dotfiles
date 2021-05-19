@@ -5,6 +5,8 @@ if ! command -v rg &> /dev/null; then
   sudo apt-get install -y hub
 fi
 
+eval "$(hub alias -s)"
+
 ln -sf ~/dotfiles/vimrc ~/.vimrc
 ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
