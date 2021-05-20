@@ -171,7 +171,7 @@ highlight SpellLocal ctermfg=lightblue ctermbg=none
 " }}}
 " MISC KEY MAPS {{{
 map <leader>y "*y
-# force myself to stop using Ag
+" force myself to stop using Ag
 map <leader>A :Rg 
 
 command! -bang -nargs=* Rg
