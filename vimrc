@@ -171,7 +171,8 @@ highlight SpellLocal ctermfg=lightblue ctermbg=none
 " }}}
 " MISC KEY MAPS {{{
 map <leader>y "*y
-map <leader>A :Ag 
+# force myself to stop using Ag
+map <leader>A :Rg 
 
 command! -bang -nargs=* -complete=file Rg
   \ call fzf#vim#grep(
