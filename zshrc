@@ -33,6 +33,7 @@ alias r='be rails'
 alias ls="${aliases[ls]:-ls} -G"
 alias ltr='ls -ltr'
 alias ltra='ls -ltra'
+alias ss='spin shell'
 
 # git aliases
 source ~/.zsh/git.zsh
