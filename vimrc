@@ -173,7 +173,7 @@ highlight SpellLocal ctermfg=lightblue ctermbg=none
 map <leader>y "*y
 map <leader>A :Ag 
 
-command! -bang -nargs=* Rg
+command! -bang -nargs=* -complete=file Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
