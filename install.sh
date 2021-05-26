@@ -1,9 +1,9 @@
 #!/bin/zsh
 
 if ! command -v rg &> /dev/null; then
-  sudo apt-get install -y ripgrep
-  sudo apt-get install -y hub
-  sudo apt-get install -y vim-gtk3 # for clipboard support
+  sudo apt install -y ripgrep
+  sudo apt install -y hub
+  sudo apt install -y vim-gtk3 # for clipboard support
 fi
 
 eval "$(hub alias -s)"
