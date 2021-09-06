@@ -307,6 +307,12 @@ nnoremap <leader>: :AS<cr>
 " RUNNING TESTS {{{
 map <leader>t :Dispatch bin/rails test %<CR>
 
+function! RunNearestTest()
+  exec ':Dispatch bin/rails test ' . expand('%') . ':' . line('.')
+endfunction
+
+map <leader>T :call RunNearestTest()<CR>
+
 let g:rspec_command = "Dispatch bundle exec rspec {spec}"
 " }}}
 " vim:foldmethod=marker:foldlevel=0
