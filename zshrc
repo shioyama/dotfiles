@@ -22,7 +22,7 @@ zstyle ':vcs_info:*' enable git
 PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%~%b $vcs_info_msg_0_ $ '
 
 # aliases
-alias v='gvim -v'
+alias v='vim.gtk3 -v'
 alias b='bundle'
 alias be='bundle exec'
 alias bi='bundle install'
