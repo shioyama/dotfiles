@@ -14,8 +14,8 @@ export HISTFILESIZE=10000000
 export HISTSIZE=10000000
 
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr '*'
-zstyle ':vcs_info:*' stagedstr '+'
+# zstyle ':vcs_info:*' unstagedstr '*'
+# zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:git:*' formats '%F{200}[%b%u%c]%f'
 zstyle ':vcs_info:*' enable git
 
