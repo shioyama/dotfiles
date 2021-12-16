@@ -1,4 +1,4 @@
-export EDITOR='vim'
+export EDITOR='vim.gtk3'
 
 # Interactive prompt
 
