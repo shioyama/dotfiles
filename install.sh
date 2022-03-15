@@ -66,6 +66,8 @@ plugins=(
   '290d7414e5f48040b25fba538c0d94de482e3b7a'
   'itchyny/lightline.vim'
   '8a712365f9708044667589d9fffd87a4825d29f6'
+  'dense-analysis/ale'
+  '560e6340ce10ce90fac587096fb147eea43e624d'
 )
 
 for plugin commit in ${(@k)plugins};
