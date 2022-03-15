@@ -95,6 +95,14 @@ let g:lightline = {
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
+" ALE
+let g:ale_completion_enabled = 1
+let g:ale_hover_to_preview = 1
+let g:ale_ruby_rubocop_executable = 'bundle'
+set updatetime=500
+set omnifunc=ale#completion#OmniFunc
+silent! helptags ALL
+
 " ref: http://superuser.com/questions/248734/when-using-grep-from-vim-how-to-jump-to-results
 nmap <silent> <C-N> :cn<CR>zv
 nmap <silent> <C-P> :cp<CR>zv
