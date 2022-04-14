@@ -1,9 +1,15 @@
 #!/bin/zsh
 
-sudo apt install -y ripgrep
-sudo apt install -y hub
-sudo apt install -y vim-gtk3 # for clipboard support
-sudo apt install -y silversearcher-ag
+if [ $SPIN ]; then
+  sudo apt install -y ripgrep
+  sudo apt install -y hub
+  sudo apt install -y vim-gtk3 # for clipboard support
+  sudo apt install -y silversearcher-ag
+else
+  brew install ripgrep
+  brew install hub
+  brew install the_silver_searcher
+fi
 
 eval "$(hub alias -s)"
 
