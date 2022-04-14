@@ -2,9 +2,14 @@ if [ $SPIN ]; then
   if [ -e /etc/zsh/zshrc.default.inc.zsh ]; then
     source /etc/zsh/zshrc.default.inc.zsh
   fi
-fi
 
-export EDITOR='vim.gtk3'
+  export EDITOR='vim.gtk3'
+else
+  autoload -Uz compinit
+  compinit
+  echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
+  [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+fi
 
 # Interactive prompt
 
