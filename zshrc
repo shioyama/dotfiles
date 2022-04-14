@@ -4,11 +4,13 @@ if [ $SPIN ]; then
   fi
 
   export EDITOR='vim.gtk3'
+  alias v='vim.gtk3 -v'
 else
   autoload -Uz compinit
   compinit
   echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
   [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+  alias v='vim'
 fi
 
 # Interactive prompt
@@ -33,7 +35,6 @@ fi
 # PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%~%b $vcs_info_msg_0_ $ '
 
 # aliases
-alias v='vim.gtk3 -v'
 alias b='bundle'
 alias be='bundle exec'
 alias bi='bundle install'
