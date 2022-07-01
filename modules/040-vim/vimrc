@@ -305,7 +305,7 @@ function! GoDirectory(directory)
   else
     " for shopify
     if isdirectory("components")
-      let args = {'source': 'find $(find components -type d -maxdepth 5 -path */'.a:directory.') -type f' }
+      let args = {'source': 'find $(find components -type d -maxdepth 5 -path "*/'.a:directory.'") -type f' }
       let args.options = ['--ansi', '--prompt', a:directory.' ', '--layout=reverse', '--info=inline']
       call fzf#run(fzf#wrap(args))
     else
