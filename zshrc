@@ -57,3 +57,7 @@ source ~/.zsh/git.zsh
 #     tmux -CC attach-session || tmux -CC new-session
 #     exit
 # fi
+export PATH="/opt/homebrew/bin:$PATH"
+
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
