@@ -279,6 +279,7 @@ nnoremap <leader>add :Gwrite<cr>
 nnoremap <leader>ci :Gcommit<cr>
 nnoremap <leader>log :Glog<cr>
 nnoremap <leader>gb :Git blame<cr>
+xnoremap <leader>G :GBrowse<cr>
 " }}}
 " RENAME CURRENT FILE {{{
 function! RenameFile()
