@@ -50,6 +50,8 @@ alias ss='spin shell'
 # git aliases
 source ~/.zsh/git.zsh
 
+eval "$(hub alias -s)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # tmux by default

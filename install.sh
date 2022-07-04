@@ -31,8 +31,6 @@ else
   brew install the_silver_searcher
 fi
 
-eval "$(hub alias -s)"
-
 # Allow modules to hook into install
 for file in "$SCRIPTPATH"/modules/*/install.sh; do
   source "$file"
