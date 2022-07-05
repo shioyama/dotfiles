@@ -8,7 +8,6 @@ if [ $SPIN ]; then
 else
   autoload -Uz compinit
   compinit
-  echo 'export PATH="/opt/homebrew/bin:$PATH"' >> ~/.zshrc
   [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
   alias v='vim'
 fi
@@ -54,12 +53,6 @@ eval "$(hub alias -s)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# tmux by default
-# if [ -z "$TMUX" ] && [ -n "$SSH_TTY" ] && [[ $- =~ i ]]; then
-#     tmux -CC attach-session || tmux -CC new-session
-#     exit
-# fi
 export PATH="/opt/homebrew/bin:$PATH"
 
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
-[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
