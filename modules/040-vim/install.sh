@@ -30,4 +30,4 @@ plug="$THISDIR"/../../submodules/vim-plug/plug.vim
 ln -s "$THISDIR"/../../submodules/vim-plug/plug.vim "$AUTOLOAD"
 
 echo "== Install VIM plugins =="
-vim -S "$THISDIR"/snapshot.vim +qall >/dev/null 2>&1
+vim -S "$THISDIR"/snapshot.vim +qall
