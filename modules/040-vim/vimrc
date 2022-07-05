@@ -4,6 +4,7 @@
 call plug#begin('$HOME/.vim/plugged')
 
 " VIM PLUGINS
+Plug 'junegunn/vim-plug'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
