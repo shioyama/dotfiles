@@ -1,15 +1,14 @@
+MYPATH="$(readlink "${HOME}/.zshrc")"
+MYDIR="$(dirname "$MYPATH")"
+
 if [ $SPIN ]; then
   if [ -e /etc/zsh/zshrc.default.inc.zsh ]; then
     source /etc/zsh/zshrc.default.inc.zsh
   fi
-
-  export EDITOR='vim.gtk3'
-  alias v='vim.gtk3 -v'
 else
   autoload -Uz compinit
   compinit
   [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
-  alias v='vim'
 fi
 
 # aliases
@@ -25,13 +24,13 @@ alias ltr='ls -ltr'
 alias ltra='ls -ltra'
 alias ss='spin shell'
 
-# git aliases
-source ~/.zsh/git.zsh
+export PATH="/opt/homebrew/bin:$PATH"
 
 eval "$(hub alias -s)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export PATH="/opt/homebrew/bin:$PATH"
-
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+
+# Allow modules to hook into zshrc
+for file in "$MYDIR"/../*/zshrc; do
+  source "$file"
+done

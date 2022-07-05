@@ -3,12 +3,6 @@
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/pryrc ~/.pryrc
 
-cp gitconfig ~/.gitconfig.local
-cat << ZSH_CONFIG >> ~/.gitconfig
-[include]
-    path = ~/.gitconfig.local
-ZSH_CONFIG
-
 SCRIPTPATH="${0:a:h}"
 
 echo "== Update git submodules =="
