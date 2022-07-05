@@ -1,11 +1,7 @@
 #!/bin/zsh
 
-ln -sf ~/dotfiles/zshrc ~/.zshrc
 ln -sf ~/dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/dotfiles/pryrc ~/.pryrc
-
-mkdir -p ~/.zsh
-cp zsh/git.zsh ~/.zsh/
 
 cp gitconfig ~/.gitconfig.local
 cat << ZSH_CONFIG >> ~/.gitconfig
