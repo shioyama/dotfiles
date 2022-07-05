@@ -26,7 +26,6 @@ AUTOLOAD="${DOTVIM}/autoload"
 
 mkdir -p "${PLUGGED}" "${AUTOLOAD}"
 
-plug="$THISDIR"/../../submodules/vim-plug/plug.vim
 ln -s "$THISDIR"/../../submodules/vim-plug/plug.vim "$AUTOLOAD"
 
 echo "== Install VIM plugins =="
