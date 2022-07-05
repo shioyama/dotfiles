@@ -2,12 +2,17 @@
 
 THISDIR="${0:a:h}"
 
-zshrc="${HOME}"/.zshrc
+files=(".zshrc")
 
-if [ ! -L $zshrc ] && [ ! -f $zshrc ]
-then
-  echo "== Link zshrc =="
-  ln -sf "${THISDIR}/.zshrc" $zshrc
-else
-  echo "== zshrc already exists =="
-fi
+for file in "${files[@]}"; do
+  source="$THISDIR/$file"
+  link="$HOME/$file"
+
+  echo "== Link $file =="
+
+  if [ -f "$link" -a ! "$(readlink "$link")" -ef "$source" ]; then
+    mv "$link" "${link}_orig"
+  fi
+
+  ln -s -f "$source" "$link"
+done
