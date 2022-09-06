@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 
 if [ $SPIN ]; then
-  export EDITOR='vim.gtk3'
-  alias v='vim.gtk3 -v'
-else
-  alias v='vim'
+  export EDITOR='nvim'
 fi
+alias v='nvim'

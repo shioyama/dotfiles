@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
 THISDIR="${0:a:h}"
-DOTVIM="${HOME}/.vim"
+DOTVIM="${HOME}/.config/nvim"
 
-vimrc="${HOME}"/.vimrc
+vimrc="${DOTVIM}"/init.vim
 
 if [ ! -L $vimrc ] && [ ! -f $vimrc ]
 then
