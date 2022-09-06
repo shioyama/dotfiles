@@ -4,7 +4,7 @@ call plug#begin('$HOME/.vim/plugged')
 " NVIM PLUGINS
 Plug 'neovim/nvim-lspconfig'
 Plug 'tami5/lspsaga.nvim'
-Plug 'folke/lsp-colors.nvim'
+"Plug 'folke/lsp-colors.nvim'
 
 " VIM PLUGINS
 Plug 'junegunn/vim-plug'
