@@ -4,7 +4,6 @@
 " or execute: vim -S snapshot.vim
 
 silent! let g:plugs['ag.vim'].commit = '4a0dd6e190f446e5a016b44fdaa2feafc582918e'
-silent! let g:plugs['ale'].commit = '16cca1413f6492a2bec1c036f1a0aa66c8219b34'
 silent! let g:plugs['fzf'].commit = '885cd8ff04e73d61279f0ac58011f74613e809dd'
 silent! let g:plugs['fzf.vim'].commit = 'c311c0a95fc2529c26ab36a8f530e9dd4426304c'
 silent! let g:plugs['lightline.vim'].commit = 'b02ef0d9f253dfc1cbb3f340b74998d7a4db0bf6'

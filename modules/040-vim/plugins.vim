@@ -22,7 +22,6 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-rhubarb'
 Plug 'thoughtbot/vim-rspec'
 Plug 'itchyny/lightline.vim'
-Plug 'dense-analysis/ale'
 
 call plug#end()
 
