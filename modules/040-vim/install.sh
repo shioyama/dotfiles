@@ -31,4 +31,4 @@ ln -s "$THISDIR"/../../submodules/vim-plug/plug.vim "$AUTOLOAD"
 ln -s "$THISDIR"/plugins.vim "$DOTVIM"
 
 echo "== Install VIM plugins =="
-vim -u "$THISDIR"/plugins.vim -S "$THISDIR"/snapshot.vim +qall
+nvim -u "$THISDIR"/plugins.vim -S "$THISDIR"/snapshot.vim +qall
