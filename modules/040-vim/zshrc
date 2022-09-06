@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
 
-if [ $SPIN ]; then
-  export EDITOR='nvim'
-fi
+export EDITOR='nvim'
 alias v='nvim'
