@@ -16,8 +16,8 @@ fi
 echo "== Copy vim files =="
 
 mkdir -p "$DOTVIM"/colors
-ln -s "$THISDIR"/grb256.vim "$DOTVIM"/colors/
-ln -s "$THISDIR"/ir_black.vim "$DOTVIM"/colors/
+ln -s "$THISDIR"/grb256.vim "$DOTVIM"/colors
+ln -s "$THISDIR"/ir_black.vim "$DOTVIM"/colors
 
 echo "== Install VIM Plug =="
 
@@ -28,7 +28,7 @@ mkdir -p "${PLUGGED}" "${AUTOLOAD}"
 
 ln -s "$THISDIR"/../../submodules/vim-plug/plug.vim "$AUTOLOAD"
 
-ln -s "$THISDIR"/plugins.vim "$DOTVIM"/
+ln -s "$THISDIR"/plugins.vim "$DOTVIM"
 
 echo "== Install VIM plugins =="
 vim -u "$THISDIR"/plugins.vim -S "$THISDIR"/snapshot.vim +qall
