@@ -2,8 +2,9 @@
 
 THISDIR="${0:a:h}"
 DOTVIM="${HOME}/.config/nvim"
-
 vimrc="${DOTVIM}"/init.vim
+
+mkdir -p $DOTVIM
 
 if [ ! -L $vimrc ] && [ ! -f $vimrc ]
 then
