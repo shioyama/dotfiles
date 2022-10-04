@@ -23,6 +23,7 @@ alias ls="${aliases[ls]:-ls} -G"
 alias ltr='ls -ltr'
 alias ltra='ls -ltra'
 alias ss='spin shell'
+alias rt='systemctl restart refresh-tokens.target'
 
 export PATH="/opt/homebrew/bin:$PATH"
 
