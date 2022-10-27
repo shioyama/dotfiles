@@ -8,6 +8,9 @@ source $HOME/.config/nvim/plugins.vim
 set nocompatible
 filetype off
 
+" disable mouse support until I can figure out how to use it
+set mouse=vi
+
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 " remember more commands and search history
