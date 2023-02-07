@@ -9,6 +9,7 @@ else
   autoload -Uz compinit
   compinit
   [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+  PROMPT="%(?.%{$(echo $state_color)%}λ .%F{red}✗%?)%f %B%~%b $vcs_info_msg_0_%(!.%F{red}#.%{%}%%)%{%} "
 fi
 
 # aliases
