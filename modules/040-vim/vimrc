@@ -124,7 +124,7 @@ let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
 let g:ack_use_cword_for_empty_search = 1
 
 " Maps <leader>/ so we're ready to type the search keyword
-nnoremap <Leader>/ :Ack!<Space>
+noremap <leader>A :Ack!<Space>
 " }}}
 
 " ref: http://superuser.com/questions/248734/when-using-grep-from-vim-how-to-jump-to-results
