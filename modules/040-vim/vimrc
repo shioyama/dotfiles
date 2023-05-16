@@ -212,7 +212,7 @@ command! -bang -nargs=* -complete=file Rg
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
-map <leader>R :Rg 
+map <leader>R :Rg!<Space>
 
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
