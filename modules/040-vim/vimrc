@@ -81,7 +81,7 @@ set complete+=kspell
 set lazyredraw
 set modelines=1
 
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*" | awk ''{ print length, $0 }'' | sort -n -s | cut -d" " -f2-'
 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
