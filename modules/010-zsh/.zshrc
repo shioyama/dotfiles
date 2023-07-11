@@ -28,8 +28,6 @@ alias rt='systemctl restart refresh-tokens.target'
 
 export PATH="/opt/homebrew/bin:$PATH"
 
-eval "$(hub alias -s)"
-
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
 
 # Allow modules to hook into zshrc

@@ -12,13 +12,11 @@ echo "== Install packages =="
 
 if [ $SPIN ]; then
   sudo apt install -y ripgrep
-  sudo apt install -y hub
   sudo apt install -y neovim
   sudo apt install -y silversearcher-ag
   sudo apt install -y bat
 else
   brew install ripgrep
-  brew install hub
   brew install the_silver_searcher
   brew install bat
 fi
