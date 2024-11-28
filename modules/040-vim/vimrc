@@ -330,7 +330,7 @@ function! GoJavascript()
     echoerr "No javascript directory found"
   endif
 endfunction
-map <leader>gj :call GoJavascript()<cr>
+map <leader>gjs :call GoJavascript()<cr>
 map <leader>gs :call GoDirectory("app/assets/stylesheets")<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 map <leader>f :Files<cr>
