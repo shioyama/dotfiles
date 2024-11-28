@@ -315,6 +315,7 @@ map <leader>ga :call GoDirectory("app")<cr>
 map <leader>gv :call GoDirectory("app/views")<cr>
 map <leader>gc :call GoDirectory("app/controllers")<cr>
 map <leader>gm :call GoDirectory("app/models")<cr>
+map <leader>gj :call GoDirectory("app/jobs")<cr>
 map <leader>gh :call GoDirectory("app/helpers")<cr>
 map <leader>gl :call GoDirectory("lib")<cr>
 map <leader>gp :call GoDirectory("public")<cr>
